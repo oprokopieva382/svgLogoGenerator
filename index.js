@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const fs = require("fs");
 const { Triangle, Circle, Square } = require("./lib/shape.js");
 
 const questions = [
@@ -44,4 +45,12 @@ inquirer.prompt(questions).then((res) => {
       console.log("Invalid shape selected");
       return;
   }
+
+  newShape.setColor(shapeColor);
+
+  const svg = newShape.makeSvg(text, textColor);
+  const path = "examples/logo.svg";
+  fs.writeFile(path, svg, (err) => {
+    err ? console.error(err) : console.log(`SVG file saved in ${path}`);
+  });
 });
