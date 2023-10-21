@@ -26,3 +26,22 @@ const questions = [
       "What shape color do you want? (❗use color keyword or a hexadecimal number)",
   },
 ];
+inquirer.prompt(questions).then((res) => {
+  const { text, textColor, shape, shapeColor } = res;
+
+  let newShape;
+  switch (shape) {
+    case "circle":
+      newShape = new Circle();
+      break;
+    case "square":
+      newShape = new Square();
+      break;
+    case "triangle":
+      newShape = new Triangle();
+      break;
+    default:
+      console.log("Invalid shape selected");
+      return;
+  }
+});
