@@ -1,17 +1,5 @@
 ## 📎svgLogoGenerator
 
-## Table of Contents
-- [📎svgLogoGenerator](#svglogogenerator)
-- [Table of Contents](#table-of-contents)
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-- [Links](#links)
-
 ## Description
 📌svg logo file building.
 
