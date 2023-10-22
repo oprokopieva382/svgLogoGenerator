@@ -62,6 +62,7 @@ inquirer.prompt(questions).then((res) => {
       return;
   }
 
+  //check text length
   text.length <= 3
     ? newShape.setText(text)
     : console.log("❗Only three or less characters");
