@@ -46,11 +46,12 @@ inquirer.prompt(questions).then((res) => {
       console.log("Invalid shape selected");
       return;
   }
-  const setText = () => {
-    if (text.length <= 3) {
-      newShape.setText(text);
-    }
-  };
+
+  if (text.length <= 3) {
+    newShape.setText(text);
+  } else {
+    console.log("❗Only three or less characters");
+  }
 
   newShape.setColor(shapeColor);
 
