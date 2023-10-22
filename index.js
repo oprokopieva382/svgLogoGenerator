@@ -2,6 +2,19 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const { Triangle, Circle, Square } = require("./lib/shape.js");
 
+// function to check if it's a valid color keyword or a hexadecimal number
+const validateColor = (input) => {
+  const validColorKeyword =
+    /^(red|green|blue|pink|purple|orange|yellow|black|white|gray|aqua|lime|olive|teal|silver|navy|maroon|fuchsia)$/i;
+  const validHexColor = /^#([0-9A-Fa-f]{3}){1,2}$/i;
+
+  if (validColorKeyword.test(input) || validHexColor.test(input)) {
+    return true;
+  } else {
+    return "Please enter a valid color keyword or a hexadecimal number (e.g., 'red' or '#FF5733').";
+  }
+};
+
 const questions = [
   {
     type: "input",
@@ -13,6 +26,7 @@ const questions = [
     name: "textColor",
     message:
       "What text color do you want? (❗use color keyword or a hexadecimal number)",
+    validate: validateColor,
   },
   {
     type: "list",
@@ -25,6 +39,7 @@ const questions = [
     name: "shapeColor",
     message:
       "What shape color do you want? (❗use color keyword or a hexadecimal number)",
+    validate: validateColor,
   },
 ];
 
@@ -47,14 +62,11 @@ inquirer.prompt(questions).then((res) => {
       return;
   }
 
-  if (text.length <= 3) {
-    newShape.setText(text);
-  } else {
-    console.log("❗Only three or less characters");
-  }
+  text.length <= 3
+    ? newShape.setText(text)
+    : console.log("❗Only three or less characters");
 
   newShape.setColor(shapeColor);
-
   newShape.setTextColor(textColor);
 
   const svg = newShape.makeSvg();
