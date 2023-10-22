@@ -22,4 +22,4 @@ npm text
 If you have any questions find me on [GitHub](https://github.com/oprokopieva382) or feel free email me oprokopieva382@gmail.com
 
 ## Links
-Check out the walkthrough video [click here](https://drive.google.com/file/d/1PF8LOfk7dHiO2QEZ2htGj7a-FRFeAnWk/view)
+Check out the walkthrough video [click here](https://drive.google.com/file/d/18ywym_7tD84P7QQhNgk0wkDN27YbZzHI/view)
